@@ -11,16 +11,16 @@
 //=================================================================
 
 #pragma once
-#include<stdio.h>
-struct tDebug{
-	FILE *debug_file;
-	void print(const char *string);
-	void print1(const char *string,int a);
-	void print2(const char *string,int a,int b);
-	void error(int line_number,const char *file_name);
-	tDebug(void);
-	~tDebug(void);
+#include <cstdio>
+struct tDebug
+{
+    FILE *debug_file;
+    void print(const char *string);
+    void print1(const char *string, int a);
+    void print2(const char *string, int a, int b);
+    void error(int line_number, const char *file_name);
+    tDebug(void);
+    ~tDebug(void);
 };
 extern tDebug Debug;
 #define ERR Debug.error(__LINE__, __FILE__)
-
